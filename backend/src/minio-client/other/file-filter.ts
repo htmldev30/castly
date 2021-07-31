@@ -13,7 +13,7 @@ export const fileFilter = (coverFile, audioFile) => {
         errors.push('Cover file type is not supported')
     }
 
-    if (coverFile.size > 1048576) {
+    if (coverFile.size > 50000000) {
         errors.push('Cover file size is too large')
     }
 

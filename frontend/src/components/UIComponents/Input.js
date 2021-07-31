@@ -1,18 +1,23 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useState } from 'react'
 import { TextInput, StyleSheet } from 'react-native'
-import { globalColors } from '../../../styles/global'
+import { globalColors, globalColorsExtras } from '../../../styles/global'
 export const Input = forwardRef(
     ({ className, error, transparent, placeholder, ...props }, ref) => {
-        // const bg = transparent
-        //     ? tailwind(`bg-transparent`)
-        //     : tailwind(`bg-white`)
-        // const ring = error
-        //     ? tailwind(`ring-1 ring-red`)
-        //     : tailwind(
-        //           `focus:outline-none focus:border-muted focus:ring-2 focus:ring-highlight`
-        //       )
-
-        return <TextInput ref={ref} style={styles.textInput} {...props} />
+        const [onFocus, setOnFocus] = useState(false)
+        const textInputStyle = [
+            styles.textInput,
+            onFocus && styles.textInputOnFocus,
+        ]
+        return (
+            <TextInput
+                ref={ref}
+                style={textInputStyle}
+                selectionColor={globalColors.highlight_default}
+                onFocus={() => setOnFocus(true)}
+                onBlur={() => setOnFocus(false)}
+                {...props}
+            />
+        )
     }
 )
 
@@ -27,5 +32,8 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         backgroundColor: globalColors.background_default,
         borderColor: globalColors.highlight_default,
+    },
+    textInputOnFocus: {
+        borderColor: globalColorsExtras.highlight_default,
     },
 })

@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
-import ProfileScreen from '../../screens/account/profile/index'
-import AccountScreen from '../../screens/account/setting/index'
-import EditAccountScreen from '../../screens/account/edit-account'
-import { UserProfileContext } from '../../hooks/context/UserProfileProvider'
+import ProfileScreen from '../../screens/account/ProfileScreen'
+import AccountScreen from '../../screens/account/SettingScreen'
+import EditAccountScreen from '../../screens/account/EditAccountScreen'
 const ProfileStack = createStackNavigator()
 
 export const ProfileStackScreens = () => {

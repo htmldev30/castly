@@ -11,13 +11,13 @@ import { ConfigModule } from '@nestjs/config'
 // Customs
 import keys from '../config/keys'
 import { UserModule } from 'src/user/user.module'
-import { UserPodcastsModule } from '../user-podcasts/user-podcasts.module'
+import { UserPodcastModule } from '../user-podcast/user-podcast.module'
 import { MinioClientModule } from '../minio-client/minio-client.module'
 
 @Module({
     imports: [
         MinioClientModule,
-        UserPodcastsModule,
+        UserPodcastModule,
         ConfigModule.forRoot({ isGlobal: true }),
         MongooseModule.forRoot(`${keys.MONGO_DB_URI}`, {
             useNewUrlParser: true,

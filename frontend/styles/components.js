@@ -2,10 +2,10 @@ import { globalStyles } from './global'
 export const globalButtonStyles = {
     buttonContainer: {
         elevation: 8,
-        backgroundColor: '#e63b19',
         borderRadius: 10,
         paddingVertical: 10,
         paddingHorizontal: 12,
+        margin: 5,
     },
     buttonText: {
         fontSize: 14,

@@ -1,8 +1,6 @@
 import React from 'react'
 import { TouchableOpacity, Text, View } from 'react-native'
 import { globalButtonStyles } from '../../../styles/components'
-// import { Spinner } from './Spinner'
-import tailwind from 'tailwind-rn'
 const C_Button = ({
     onPress,
     title,
@@ -24,7 +22,9 @@ const C_Button = ({
             disabled={disabled || loading}
             style={[
                 globalButtonStyles.buttonContainer,
-                backgroundColor && { backgroundColor },
+                backgroundColor
+                    ? { backgroundColor }
+                    : { backgroundColor: '#e63b19' },
                 size === 'lg' && {
                     paddingHorizontal: 72,
                     paddingVertical: 18,
@@ -36,12 +36,14 @@ const C_Button = ({
             <View
                 style={
                     loading
-                        ? tailwind('opacity-0')
-                        : tailwind(`flex items-center`)
+                        ? { opacity: 0 }
+                        : { display: 'flex', alignItems: 'center' }
                 }
             >
                 {icon ? (
-                    <Text style={tailwind(`mr-2 items-center`)}>{icon}</Text>
+                    <Text style={{ marginRight: 2, alignItems: 'center' }}>
+                        {icon}
+                    </Text>
                 ) : null}
                 {children}
                 <Text

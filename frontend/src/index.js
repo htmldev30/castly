@@ -6,6 +6,8 @@ import { useFonts } from 'expo-font'
 import { fonts } from '../styles/global'
 import { AuthenticationContext } from './hooks/context/AuthenticationProvider'
 import UserProfileProvider from './hooks/context/UserProfileProvider'
+import PodcastsProvider from './hooks/context/PodcastsProvider'
+
 // Components
 import AuthNavigation from './routes/authNavigation'
 import Navigation from './routes/navigation'
@@ -18,7 +20,9 @@ export default function Index() {
         if (isAuthenticated) {
             return (
                 <UserProfileProvider>
-                    <Navigation />
+                    <PodcastsProvider>
+                        <Navigation />
+                    </PodcastsProvider>
                 </UserProfileProvider>
             )
         } else {
