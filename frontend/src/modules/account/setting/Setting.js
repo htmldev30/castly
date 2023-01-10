@@ -1,3 +1,5 @@
+// Code adapted from React Native Elements Documentation
+// https://reactnativeelements.com/docs/1.2.0/listitem
 import React, { useContext } from 'react'
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import { ListItem } from 'react-native-elements'

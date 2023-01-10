@@ -1,3 +1,5 @@
+//Code adapted from Elijah Trillionz Dev.to Tutorial Article
+//https://dev.to/elijahtrillionz/complete-guide-on-how-to-use-styled-components-in-react-360c
 import React from 'react'
 import { Image, StyleSheet, View } from 'react-native'
 import { globalColors } from '../../../styles/global'

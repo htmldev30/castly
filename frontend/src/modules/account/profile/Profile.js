@@ -1,3 +1,5 @@
+// Code adapted from React-Native Tab View Documentation example
+// https://www.npmjs.com/package/react-native-tab-view 
 import React, { useState } from 'react'
 import {
     useWindowDimensions,
