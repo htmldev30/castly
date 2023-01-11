@@ -1,4 +1,4 @@
-// Code adapted from jajaperson's GitHub nestjs-auth0
+// Code adapted from jajaperson's GitHub nestjs-auth0 example
 // https://github.com/jajaperson/nestjs-auth0
 import { Injectable, NestMiddleware } from '@nestjs/common'
 import * as jwt from 'express-jwt'
